@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[392],{6778:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/eventsadmin",function(){return e(1704)}])}},_=>{var n=n=>_(_.s=n);_.O(0,[284,487,316,473,17,144,33,608,493,704,636,593,792],()=>n(6778)),_N_E=_.O()}]);

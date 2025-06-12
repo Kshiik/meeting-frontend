@@ -120,9 +120,9 @@ const ProfilePage = () => {
             limit,
           };
           const data = await fetchEvents(filters);
-          setEvents(data.data);
-          setEventsAmount(data.meta.total)
-          setEventsTotalPages(data.meta.totalPages);
+          setEvents(data);
+          setEventsAmount(data.length)
+          setEventsTotalPages(5);
         } catch (err) {
             showNotification(
                 "Не удалось загрузить мероприятия",

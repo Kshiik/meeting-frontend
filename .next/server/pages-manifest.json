@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/archive": "pages/archive.html",
+  "/auth": "pages/auth.html",
+  "/events": "pages/events.html",
+  "/eventsadmin": "pages/eventsadmin.html",
+  "/": "pages/index.html",
+  "/profile": "pages/profile.html",
+  "/roomcard/[idRoom]": "pages/roomcard/[idRoom].html",
+  "/rooms": "pages/rooms.html",
+  "/timeline": "pages/timeline.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
