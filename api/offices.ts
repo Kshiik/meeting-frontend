@@ -2,7 +2,7 @@ import { Office } from "../types";
 
 export const fetchOffices = async (): Promise<Office[]> => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/office", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/office`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

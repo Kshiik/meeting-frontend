@@ -21,7 +21,7 @@ export const fetchMeetingRooms = async (filters: Filters = {}): Promise<Paginate
       if (filters.page) queryParams.append("page", filters.page.toString());
       if (filters.limit) queryParams.append("limit", filters.limit.toString());
   
-      const url = `http://127.0.0.1:8000/api/meeting-room?${queryParams.toString()}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL}/api/meeting-room?${queryParams.toString()}`;
       console.log("Запрос:", url);
   
       const response = await fetch(url, {
@@ -47,7 +47,7 @@ export const fetchMeetingRooms = async (filters: Filters = {}): Promise<Paginate
 
 export const fetchMeetingRoomById = async (id: number): Promise<FullMeetingRoom> => {
   try {
-    const url = `http://127.0.0.1:8000/api/meeting-room/${id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/meeting-room/${id}`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
