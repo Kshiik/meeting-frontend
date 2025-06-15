@@ -24,7 +24,7 @@ export const fetchEvents = async (filters: EventFilters = {}): Promise<Event[]> 
     if (filters.date) queryParams.append("date", filters.date);
     if (filters.officeId) queryParams.append("office_id", filters.officeId.toString());
 
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/event?${queryParams.toString()}`;
+    const url = `/api/proxy/api/event?${queryParams.toString()}`;
     console.log("Запрос:", url);
 
     const response = await fetch(url, {
@@ -92,7 +92,7 @@ export const fetchEvents = async (filters: EventFilters = {}): Promise<Event[]> 
 };
 
 export const createEvent = async (event: EventCreate): Promise<{success: boolean, id: number }> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/event`, {
+  const response = await fetch(`/api/proxy/api/event`, {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export const createEvent = async (event: EventCreate): Promise<{success: boolean
 };
 
 export const updateEvent = async (id: number, event: EventCreate): Promise<void> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/event/${id}`, {
+  const response = await fetch(`/api/proxy/api/event/${id}`, {
     method: "PATCH",
     headers: { 
       "Content-Type": "application/json",
@@ -119,7 +119,7 @@ export const updateEvent = async (id: number, event: EventCreate): Promise<void>
 };
 
 export const deleteEvent = async (id: number): Promise<void> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/event/${id}`, {
+  const response = await fetch(`/api/proxy/api/event/${id}`, {
     method: "DELETE",
     headers: { 
       "Content-Type": "application/json",

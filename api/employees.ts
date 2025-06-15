@@ -10,7 +10,7 @@ export interface UpdateEmployeeData {
 }
 
 export const fetchEmployees = async (): Promise<Employee[]> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employee`, {
+  const response = await fetch(`/api/proxy/api/employee`, {
     method: "GET",
     headers: { 
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ export const fetchEmployees = async (): Promise<Employee[]> => {
 
 export const updateEmployee = async (id: number, data: UpdateEmployeeData): Promise<void> => {
   const token = localStorage.getItem('jwt');
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employee/${id}`, {
+  const response = await fetch(`/api/proxy/api/employee/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

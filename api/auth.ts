@@ -11,7 +11,7 @@ interface LoginResponse {
 }
   
 export const login = async (credentials: LoginCredentials): Promise<string> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login_check`, {
+    const response = await fetch(`/api/proxy/api/login_check`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export const getCurrentUser = async (): Promise<FullEmployee | null> => {
       return null;
     }
   
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employee/self`, {
+    const response = await fetch(`/api/proxy/api/employee/self`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
