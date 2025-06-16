@@ -33,7 +33,7 @@ export async function sendSubscriptionToServer(
     subscription: PushSubscription,
     userId: number
 ): Promise<{ status: string } | { error: string }> {
-    const response = await fetch('http://127.0.0.1:8000/api/push-subscribe', {
+    const response = await fetch('/api/proxy/api/push-subscribe', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export async function sendSubscriptionToServer(
 }
 
 export async function removeSubscriptionFromServer(subscription: PushSubscription): Promise<void> {
-    await fetch('http://127.0.0.1:8000/api/push-unsubscribe', {
+    await fetch('/api/proxy/api/push-unsubscribe', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
